@@ -20,11 +20,11 @@ Initialization is done by calling the `init ([options: Object])` method, the opt
 |`background`|Background color of the canvas.|`#000`
 |`fps`|Maximum number of frames per second (FPS) the system should target.|`60`
 |`minFps`|Minimum number of FPS the system is allowed to reach, when an FPS lower that this value is detected the system will ensure a fixed time step of 1000/minFps is used.|`15`
-|`antialias`|Indicates if antialias should be enabled on the System's Canvas.|`true`
-|`targetScreenWidth`|When not-null or not-zero specifies the target screen width desired. If a larger or smaller width is detected on the client, the System will scale it appropriately such that you can always assume your width is `targetScreenWidth`.|`null`
+|`antialias`|Indicates if antialias should be enabled on the `System` Canvas.|`true`
+|`targetScreenWidth`|When not-null or not-zero specifies the target screen width desired. If a larger or smaller width is detected on the client, the `System` will scale it appropriately such that you can always assume your width is `targetScreenWidth`.|`null`
 |`targetScreenHeight`|Same as above, but for height.|`null`
 |`orientation`|Specifies the target screen orientation. See available orientations below for details.|`System.DEFAULT`
-|`fullscreen`|When `true` the System will use the `screen` object to size the canvas. When `false` it will use the `window`'s inner bounds.|`true`
+|`fullscreen`|When `true` the `System` will use the `screen` object to size the canvas. When `false` it will use the `window`'s inner bounds.|`true`
 
 ### Orientation
 
@@ -39,13 +39,13 @@ Orientation constants are accessed using `System` and the following are availabl
 
 ## Using `update` and `draw` callbacks
 
-System as mentioned before, is responsible for frame draw and frame update, this is done by registering an object to either queue or to both. When an object is registered for the `update` queue it must have an `update (deltaTime: int)` method (`deltaTime` is in milliseconds), and when registered for the `draw` queue it must have a `draw (canvas: Canvas)` method.
+`System` as mentioned before, is responsible for frame draw and frame update, this is done by registering an object to either queue or to both. When an object is registered for the `update` queue it must have an `update (deltaTime: int)` method (`deltaTime` is in milliseconds), and when registered for the `draw` queue it must have a `draw (canvas: Canvas)` method.
 
 - Use `updateQueueAdd (obj: Object)` to add the object to the update queue.
 - Use `drawQueueAdd (obj: Object)` to add the object to the draw queue.
 - Use `queueAdd (obj: Object)` to add the object to both update and draw queues.
 
-And simmetrically:
+And symmetrically:
 
 - Use `updateQueueRemove (obj: Object)` to remove the object from the update queue.
 - Use `drawQueueRemove (obj: Object)` to remove the object from the draw queue.
@@ -53,7 +53,7 @@ And simmetrically:
 
 ## Initialization of `System`
 
-The `System` is started by calling the `start()` method, afterwards the system will take care of all rendering and updates periodically to ensure the desired FPS is met.
+The `System` is started by calling the `start()` method, afterwards it will take care of all rendering and updates to ensure the desired FPS is met.
 
 A full-stop (no more draw nor update cycles) is achieved by calling the `stop()` method.
 

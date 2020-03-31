@@ -4,7 +4,7 @@ This folder contains all the currently available samples for the Cherry Gamedev 
 
 # Installation
 
-This project requires **browserify**, **watchify**, and of course ***Cherry***. To install all required dependencies simply run:
+First clone this repository and ensure you have NodeJS installed. The root folder of this repo is a NodeJS project that requires **browserify**, **watchify**, and of course **Cherry**. To install all required dependencies simply run:
 
 ```sh
 npm install --no-optional
