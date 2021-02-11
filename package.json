@@ -4,10 +4,14 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "00-getting-started": "browserify 00-getting-started/main.js -o dist/bundle.js",
-    "watch-00-getting-started": "watchify 00-getting-started/main.js -o dist/bundle.js -v"
+    "requirements": "yarn global add --ignore-optional parcel-bundler",
+    "00-getting-started": "parcel build 00-getting-started/main.js -d 00-getting-started -o bundle.js",
+    "watch-00-getting-started": "parcel watch 00-getting-started/main.js -o 00-getting-started/bundle.js -v"
   },
+  "browserslist": [
+	"since 2019-01"
+],
   "dependencies": {
-    "@rsthn/cherry": "^2.0.8"
+    "@rsthn/cherry": "^2.0"
   }
 }
